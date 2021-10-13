@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 const StackNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Menu"
+      initialRouteName="Home"
       screenOptions={{ cardStyle: { backgroundColor: "#ffffff" } }}
     >
       <Stack.Screen

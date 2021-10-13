@@ -8,6 +8,7 @@ import {
 } from "@expo/vector-icons";
 import React from "react";
 import Article from "../components/Article";
+import Footer from "../components/Footer";
 
 const Menu = () => {
   return (
@@ -42,26 +43,9 @@ const Menu = () => {
 
       {/* Footer Part - 모듈 분리 필요*/}
       <View style={styles.page3}>
-        <TouchableOpacity style={styles.footer}>
-          <MaterialCommunityIcons
-            name="lock-pattern"
-            size={30}
-            color="#a3cdf5"
-          />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.footer}>
-          <Entypo name="menu" size={30} color="#a3cdf5" />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.footer}>
-          <Ionicons name="alarm" size={30} color="#a3cdf5" />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.footer}>
-          <Ionicons name="settings" size={30} color="#a3cdf5" />
-        </TouchableOpacity>
+        <Footer></Footer>
       </View>
+
     </View>
   );
 };

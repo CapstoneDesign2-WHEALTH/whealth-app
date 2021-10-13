@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={[styles.headerText, { marginTop: 20 }]}>Welcome Back</Text>
@@ -41,7 +41,12 @@ const Login = () => {
         onPress={() => alert("I forgot password")}
       />
 
-      <Button title="Login" bgcolor="blue" onPress={() => alert("um hi")} />
+      <Button
+        title="Login"
+        bgcolor="blue"
+        onPress={() => navigation.navigate("Menu")}
+      />
+
     </View>
   );
 };
