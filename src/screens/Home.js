@@ -1,41 +1,43 @@
 import React from 'react';
-import {Alert, Image} from 'react-native';
+import {Alert, Image, StyleSheet, View} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
-import Button from '../components/Button';
-import PropTypes from 'prop-types';
-
-const Container = styled.View`
-    background-color: #ffffff;
-    align-items: center;
-`;
-const StyledText = styled.Text`
-    font-size: 30px;
-    margin-bottom: 10px;
-`;
+import HomeButton from '../components/HomeButton';
+import { HomeButtonStyles } from '../styles/ButtonStyle';
 
 const Home = ({navigation})=>{
     return (
-        <Container>
+        <View style={styles.mainView}>
             <Image
-                style={{width: 356, height: 77, marginTop: 80}}
+                style={{width: '100%', height: '10%', marginTop: '30%'}}
                 source={require('../../assets/wealthlogo.png')}
             />
             <Image
-                style={{width: 378, height: 350}}
+                style={{width: '100%', height: '50%', marginBottom: '10%'}}
                 source={require('../../assets/waterboy.png')}
             />
-            <Button 
-                title = "Sign Up" 
-                bgcolor = "blue"
+            <HomeButton
+                title="Sign Up"
+                fontcolor="#FFFFFF"
+                bgcolor="#A3CFE5"
                 onPress={()=>alert('um hi')}
             />
-            <Button
-                title = "Login"
-                bgcolor = "white"
+            <HomeButton
+                title="Login"
+                fontcolor="#A3CFE5"
+                bgcolor="#FFFFFF"
                 onPress={()=>navigation.navigate('Login')}
             />
-        </Container>
+            
+        </View>
     );
 };
+
+const styles = StyleSheet.create({
+    mainView:{
+        backgroundColor: '#ffffff',
+        alignItems: 'center',
+    }
+})
 
 export default Home;

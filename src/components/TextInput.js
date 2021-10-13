@@ -18,8 +18,6 @@ const myTextInput = () => {
             placeholder = "Password"
             placeholderTextColor ='#A3CFE5'
         />
-
-
         </View>
 
     );
