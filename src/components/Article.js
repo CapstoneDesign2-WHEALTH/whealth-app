@@ -23,7 +23,12 @@ const styles = StyleSheet.create({
 });
 const Article = (props) => {
   return (
-    <TouchableOpacity style={styles.article}>
+    <TouchableOpacity
+      style={styles.article}
+      onPress={() => {
+        props.navigation.navigate("TodayDrink");
+      }}
+    >
       <Text style={styles.article_text}>{props.title}</Text>
       <MaterialCommunityIcons name={props.icon} size={40} color="black" />
     </TouchableOpacity>

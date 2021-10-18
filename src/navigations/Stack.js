@@ -5,12 +5,14 @@ import Login from "../screens/Login";
 import Menu from "../screens/Menu";
 import Setting from "../screens/Setting";
 import Alarm from "../screens/Alarm";
+import TodayDrink from "../screens/TodayDrink";
+
 const Stack = createStackNavigator();
 
 const StackNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="TodayDrink"
       screenOptions={{ cardStyle: { backgroundColor: "#ffffff" } }}
     >
       <Stack.Screen
@@ -28,18 +30,21 @@ const StackNavigation = () => {
         component={Menu}
         options={{ headerShown: false }}
       />
-
       <Stack.Screen
         name="Setting"
         component={Setting}
         options={{ headerShown: false }}
       />
-
-    <Stack.Screen
+      <Stack.Screen
         name="Alarm"
         component={Alarm}
         options={{ headerShown: false }}
-      />  
+      />
+      <Stack.Screen
+        name="TodayDrink"
+        component={TodayDrink}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 };

@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import Footer from "../components/Footer";
 
-const Alarm = ({ navigation }) => {
+const TodayDrink = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -13,13 +13,13 @@ const Alarm = ({ navigation }) => {
       {/* 페이지 표시 */}
       <View style={styles.page1}>
         <Text style={{ color: "#145BC7", fontSize: 35, fontWeight: "700" }}>
-          알람
+          오늘의 음수량
         </Text>
       </View>
 
-      {/* 켜진 알람 */}
+      {/* 음수량 표시 */}
       <View style={styles.page2}>
-        <Text> 알람 표시 .map </Text>
+        <Text> 음수량 표시 </Text>
       </View>
 
       {/* Footer */}
@@ -63,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Alarm;
+export default TodayDrink;

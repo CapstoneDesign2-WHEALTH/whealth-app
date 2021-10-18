@@ -35,10 +35,26 @@ const Menu = ({ navigation }) => {
 
       {/* 메뉴 선택지 - Article */}
       <View style={styles.page2}>
-        <Article title="오늘의 음수량" icon="cup-water"></Article>
-        <Article title="음수량 기록" icon="lead-pencil"></Article>
-        <Article title="차트 / 통계" icon="chart-bar"></Article>
-        <Article title="Water 알람" icon="alarm"></Article>
+        <Article
+          title="오늘의 음수량"
+          icon="cup-water"
+          navigation={navigation}
+        ></Article>
+        <Article
+          title="음수량 기록"
+          icon="lead-pencil"
+          navigation={navigation}
+        ></Article>
+        <Article
+          title="차트 / 통계"
+          icon="chart-bar"
+          navigation={navigation}
+        ></Article>
+        <Article
+          title="Water 알람"
+          icon="alarm"
+          navigation={navigation}
+        ></Article>
       </View>
 
       {/* Footer Part - 모듈 분리 필요*/}
