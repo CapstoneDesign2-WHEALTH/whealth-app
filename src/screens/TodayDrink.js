@@ -1,12 +1,19 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Dimensions,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import Footer from "../components/Footer";
 import Wave from "react-native-waveview";
 
-const chartHeight = Dimensions.get('window').height;
-const chartWidth = Dimensions.get('window').width;
+const chartHeight = Dimensions.get("window").height;
+const chartWidth = Dimensions.get("window").width;
+
 const TodayDrink = ({ navigation }) => {
   return (
     <View style={styles.container}>
@@ -22,17 +29,17 @@ const TodayDrink = ({ navigation }) => {
 
       {/* 음수량 표시 */}
       <View style={styles.page2}>
-        <Text> 50% 달성! </Text>
-          <Wave
-            style={_styles.waveBall}
-            H={chartHeight/11*4}
-            waveParams={[
-              { A: 15, T: chartWidth*2, fill: "#62c2ff" },
-              { A: 35, T: chartWidth*2+500, fill: "#0087dc" },
-              { A: 25, T: chartWidth*2+1000, fill: "#1aa7ff" },
-            ]}
-            animated={true}
-          />
+        <Text style={{fontSize:70, color:"#145BC7"}}> 40% </Text>
+        <Wave
+          style={_styles.waveBall}
+          H={(chartHeight / 11) * 2}
+          waveParams={[
+            { A: 25, T: chartWidth * 2, fill: "#62c2ff" },
+            { A: 25, T: chartWidth * 2 + 500, fill: "#0087dc" },
+            { A: 20, T: chartWidth * 2 + 1000, fill: "#1aa7ff" },
+          ]}
+          animated={true}
+        />
       </View>
 
       {/* Footer */}
@@ -60,7 +67,7 @@ const styles = StyleSheet.create({
   page2: {
     flex: 8,
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
     borderBottomColor: "#145BC7",
     borderTopColor: "#145BC7",
   },
@@ -90,9 +97,9 @@ const _styles = StyleSheet.create({
     backgroundColor: "white",
   },
   waveBall: {
-    width: "100%",
+    width: chartWidth-50,
     aspectRatio: 1,
-    // borderRadius: 30,
+    borderRadius: 200,
     overflow: "hidden",
   },
 });
