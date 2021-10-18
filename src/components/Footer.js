@@ -1,40 +1,52 @@
-import React from 'react'
-import { View, StyleSheet, TouchableOpacity } from 'react-native'
-import { MaterialCommunityIcons, AntDesign  } from "@expo/vector-icons";
+import React from "react";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 
-const Footer = ()=>{
+const Footer = (props) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      {/* <TouchableOpacity>
         <MaterialCommunityIcons
           name="lock-pattern"
           size={30}
           color="#a3cdf5"
         />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
-      <TouchableOpacity>
-        <MaterialCommunityIcons name="menu" size={30} color="#a3cdf5" />
-      </TouchableOpacity>
-
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate("Alarm");
+        }}
+      >
         <MaterialCommunityIcons name="alarm" size={30} color="#a3cdf5" />
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate("Menu");
+        }}
+      >
+        <MaterialCommunityIcons name="menu" size={30} color="#a3cdf5" />
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate("Setting");
+        }}
+      >
         <AntDesign name="setting" size={30} color="#a3cdf5" />
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
-  container :{
-    flex:1,
-    flexDirection:"row",
-    alignItems:"center",
-    justifyContent:"space-evenly"
-  }
-})
+  container: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+  },
+});
 
-export default Footer
+export default Footer;

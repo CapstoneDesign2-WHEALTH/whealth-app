@@ -1,9 +1,7 @@
 import React from "react";
 import { Image } from "react-native";
-import styled from "styled-components/native";
 import Button from "../components/Button";
 import { StyleSheet, View, Text } from "react-native";
-import PropTypes from "prop-types";
 import TextInput from "../components/TextInput";
 
 const styles = StyleSheet.create({
@@ -20,7 +18,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={[styles.headerText, { marginTop: 20 }]}>Welcome Back</Text>
@@ -46,7 +44,6 @@ const Login = ({navigation}) => {
         bgcolor="blue"
         onPress={() => navigation.navigate("Menu")}
       />
-
     </View>
   );
 };

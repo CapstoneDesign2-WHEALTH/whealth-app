@@ -10,7 +10,7 @@ import React from "react";
 import Article from "../components/Article";
 import Footer from "../components/Footer";
 
-const Menu = () => {
+const Menu = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -43,9 +43,8 @@ const Menu = () => {
 
       {/* Footer Part - 모듈 분리 필요*/}
       <View style={styles.page3}>
-        <Footer></Footer>
+        <Footer navigation={navigation}></Footer>
       </View>
-
     </View>
   );
 };
