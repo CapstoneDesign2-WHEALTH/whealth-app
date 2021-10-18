@@ -4,15 +4,16 @@ import Home from "../screens/Home";
 import Login from "../screens/Login";
 import Menu from "../screens/Menu";
 import Setting from "../screens/Setting";
-import Alarm from "../screens/Alarm";
+import CurrentAlarm from "../screens/CurrentAlarm";
 import TodayDrink from "../screens/TodayDrink";
+import SetAlarm from "../screens/SetAlarm";
 
 const Stack = createStackNavigator();
 
 const StackNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="TodayDrink"
+      initialRouteName="Home"
       screenOptions={{ cardStyle: { backgroundColor: "#ffffff" } }}
     >
       <Stack.Screen
@@ -36,13 +37,18 @@ const StackNavigation = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Alarm"
-        component={Alarm}
+        name="CurrentAlarm"
+        component={CurrentAlarm}
         options={{ headerShown: false }}
       />
       <Stack.Screen
         name="TodayDrink"
         component={TodayDrink}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SetAlarm"
+        component={SetAlarm}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

@@ -26,7 +26,7 @@ const Article = (props) => {
     <TouchableOpacity
       style={styles.article}
       onPress={() => {
-        props.navigation.navigate("TodayDrink");
+        props.navigation.navigate(props.name);
       }}
     >
       <Text style={styles.article_text}>{props.title}</Text>

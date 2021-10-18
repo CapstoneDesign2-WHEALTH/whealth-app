@@ -15,7 +15,7 @@ const Footer = (props) => {
 
       <TouchableOpacity
         onPress={() => {
-          props.navigation.navigate("Alarm");
+          props.navigation.navigate("CurrentAlarm");
         }}
       >
         <MaterialCommunityIcons name="alarm" size={30} color="#a3cdf5" />

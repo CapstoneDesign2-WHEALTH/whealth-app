@@ -39,21 +39,25 @@ const Menu = ({ navigation }) => {
           title="오늘의 음수량"
           icon="cup-water"
           navigation={navigation}
+          name="TodayDrink"
         ></Article>
         <Article
           title="음수량 기록"
           icon="lead-pencil"
           navigation={navigation}
+          name="Record"
         ></Article>
         <Article
           title="차트 / 통계"
           icon="chart-bar"
           navigation={navigation}
+          name="Chart"
         ></Article>
         <Article
           title="Water 알람"
           icon="alarm"
           navigation={navigation}
+          name="SetAlarm"
         ></Article>
       </View>
 

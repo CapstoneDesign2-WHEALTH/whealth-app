@@ -29,7 +29,7 @@ const TodayDrink = ({ navigation }) => {
 
       {/* 음수량 표시 */}
       <View style={styles.page2}>
-        <Text style={{fontSize:70, color:"#145BC7"}}> 40% </Text>
+        <Text style={{ fontSize: 70, color: "#145BC7" }}> 40% </Text>
         <Wave
           style={_styles.waveBall}
           H={(chartHeight / 11) * 2}
@@ -97,7 +97,7 @@ const _styles = StyleSheet.create({
     backgroundColor: "white",
   },
   waveBall: {
-    width: chartWidth-50,
+    width: chartWidth - 50,
     aspectRatio: 1,
     borderRadius: 200,
     overflow: "hidden",

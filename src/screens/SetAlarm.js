@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import Footer from "../components/Footer";
 
-const Alarm = ({ navigation }) => {
+const SetAlarm = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -17,9 +17,9 @@ const Alarm = ({ navigation }) => {
         </Text>
       </View>
 
-      {/* 켜진 알람 */}
+      {/* 알람 만들기 */}
       <View style={styles.page2}>
-        <Text> 알람 표시 .map </Text>
+        <Text> 알람 만들기 </Text>
       </View>
 
       {/* Footer */}
@@ -63,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Alarm;
+export default SetAlarm;
