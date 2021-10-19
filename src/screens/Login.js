@@ -1,11 +1,15 @@
 import React from "react";
 import { Image } from "react-native";
-import Button from "../components/Button";
+import styled from "styled-components/native";
 import { StyleSheet, View, Text } from "react-native";
+import PropTypes from "prop-types";
 import TextInput from "../components/TextInput";
+import HomeButton from "../components/HomeButton";
+import { HomeButtonStyles } from "../styles/ButtonStyle";
 
-const styles = StyleSheet.create({
+const loginStyles = StyleSheet.create({
   container: {
+    marginTop: "15%",
     flex: 1,
     backgroundColor: "#ffffff",
     alignItems: "center",
@@ -18,30 +22,39 @@ const styles = StyleSheet.create({
   },
 });
 
-const Login = ({ navigation }) => {
+const Login = ({navigation}) => {
   return (
-    <View style={styles.container}>
-      <Text style={[styles.headerText, { marginTop: 20 }]}>Welcome Back</Text>
+    <View style={loginStyles.container}>
+      <Text style={[loginStyles.headerText, { marginTop: "10%" }]}>
+        Welcome Back
+      </Text>
 
-      <Text style={[styles.headerText, { fontSize: 40 }, { marginBottom: 10 }]}>
+      <Text
+        style={[
+          loginStyles.headerText,
+          { fontSize: 40 },
+          { marginBottom: "5%" },
+        ]}
+      >
         Login
       </Text>
 
       <Image
-        style={{ width: 378, height: 220 }}
+        style={{ width: "100%", height: "30%", marginBottom: "5%" }}
         source={require("../../assets/waterboy.png")}
       />
       <TextInput />
 
-      <Button
+      <HomeButton
         title="Forgot Password?"
-        bgcolor="white"
-        onPress={() => alert("I forgot password")}
+        fontcolor="#A3CFE5"
+        bgcolor="#FFFFFF"
+        onPress={() => alert("forgot passwd")}
       />
-
-      <Button
+      <HomeButton
         title="Login"
-        bgcolor="blue"
+        fontcolor="#FFFFFF"
+        bgcolor="#A3CFE5"
         onPress={() => navigation.navigate("Menu")}
       />
     </View>
