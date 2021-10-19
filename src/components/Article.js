@@ -1,6 +1,21 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+const Article = (props) => {
+  return (
+    <TouchableOpacity
+      style={styles.article}
+      onPress={() => {
+        props.navigation.navigate(props.name);
+      }}
+    >
+      <Text style={styles.article_text}>{props.title}</Text>
+      <MaterialCommunityIcons name={props.icon} size={40} color="black" />
+    </TouchableOpacity>
+  );
+};
+
 const styles = StyleSheet.create({
   article: {
     flex: 0.1,
@@ -21,18 +36,4 @@ const styles = StyleSheet.create({
     fontWeight: "800",
   },
 });
-const Article = (props) => {
-  return (
-    <TouchableOpacity
-      style={styles.article}
-      onPress={() => {
-        props.navigation.navigate(props.name);
-      }}
-    >
-      <Text style={styles.article_text}>{props.title}</Text>
-      <MaterialCommunityIcons name={props.icon} size={40} color="black" />
-    </TouchableOpacity>
-  );
-};
-
 export default Article;

@@ -42,10 +42,10 @@ const Menu = ({ navigation }) => {
           name="TodayDrink"
         ></Article>
         <Article
-          title="음수량 기록"
+          title="맞춤 건강 진단"
           icon="lead-pencil"
           navigation={navigation}
-          name="Record"
+          name="Diagnosis"
         ></Article>
         <Article
           title="차트 / 통계"

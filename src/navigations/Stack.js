@@ -7,6 +7,8 @@ import Setting from "../screens/Setting";
 import CurrentAlarm from "../screens/CurrentAlarm";
 import TodayDrink from "../screens/TodayDrink";
 import SetAlarm from "../screens/SetAlarm";
+import Chart from "../screens/Chart";
+import Diagnosis from "../screens/Diagnosis";
 
 const Stack = createStackNavigator();
 
@@ -49,6 +51,16 @@ const StackNavigation = () => {
       <Stack.Screen
         name="SetAlarm"
         component={SetAlarm}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Chart"
+        component={Chart}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Diagnosis"
+        component={Diagnosis}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
