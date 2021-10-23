@@ -1,9 +1,25 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity,Dimensions } from "react-native";
 import React from "react";
 import Footer from "../../components/Footer";
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from "react-native-chart-kit";
+
+const screenWidth = Dimensions.get("window").width
+const screenHeight = Dimensions.get("window").height
 
 const Chart = ({ navigation }) => {
+  // 진행 차트 데이터
+  const data = {
+    labels: ["Swim", "Bike", "Run"], // optional
+    data: [0.4, 0.6, 0.8]
+  };
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -18,7 +34,51 @@ const Chart = ({ navigation }) => {
 
       {/* 차트 표시 */}
       <View style={styles.page2}>
-        <Text> 차트 그리기 </Text>
+        <View>
+          {/* 라인 차트 */}
+          <LineChart
+            data={{
+              labels: ["January", "February", "March", "April", "May", "June"],
+              datasets: [
+                {
+                  data: [
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100
+                  ]
+                }
+              ]
+            }}
+            width={screenWidth} // from react-native
+            height={screenHeight/11*4}
+            yAxisLabel=""
+            yAxisSuffix="ml"
+            yAxisInterval={1} // optional, defaults to 1
+            chartConfig={chartConfig}
+            bezier
+            style={{
+              marginVertical: 8,
+              borderRadius: 16,
+            }}
+          />
+        </View>
+
+        {/* 진행차트 */}
+        <ProgressChart
+          data={data}
+          width={screenWidth}
+          height={screenHeight/11*4}
+          strokeWidth={16}
+          radius={32}
+          chartConfig={chartConfig}
+          style={{
+            marginVertical: 8,
+            borderRadius: 16,
+          }}
+        />
       </View>
 
       {/* Footer */}
@@ -61,5 +121,23 @@ const styles = StyleSheet.create({
     borderTopColor: "#a3cdf5",
   },
 });
+
+// 차트 스타일
+const chartConfig = {
+  backgroundColor: "#145BC7",
+  backgroundGradientFrom: "#145BC7",
+  backgroundGradientTo: "#145BC7",
+  decimalPlaces: 2, // optional, defaults to 2dp
+  color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+  labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+  style: {
+    borderRadius: 16
+  },
+  propsForDots: {
+    r: "6",
+    strokeWidth: "2",
+    stroke: "#145BC7" // 점 색상
+  }
+};
 
 export default Chart;
