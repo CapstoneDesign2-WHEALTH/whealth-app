@@ -2,9 +2,9 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 
-const SetAlarm = ({ navigation }) => {
+const CurrentAlarm = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -17,9 +17,9 @@ const SetAlarm = ({ navigation }) => {
         </Text>
       </View>
 
-      {/* 알람 만들기 */}
+      {/* 켜진 알람 */}
       <View style={styles.page2}>
-        <Text> 알람 만들기 </Text>
+        <Text> 알람 표시 .map </Text>
       </View>
 
       {/* Footer */}
@@ -63,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SetAlarm;
+export default CurrentAlarm;

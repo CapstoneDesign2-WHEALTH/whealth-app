@@ -6,7 +6,7 @@ import {
   Dimensions,
 } from "react-native";
 import React from "react";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import Wave from "react-native-waveview";
 
 const chartHeight = Dimensions.get("window").height;

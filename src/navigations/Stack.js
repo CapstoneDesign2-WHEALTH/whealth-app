@@ -3,12 +3,12 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/Home";
 import Login from "../screens/Login";
 import Menu from "../screens/Menu";
-import Setting from "../screens/Setting";
-import CurrentAlarm from "../screens/CurrentAlarm";
-import TodayDrink from "../screens/TodayDrink";
-import SetAlarm from "../screens/SetAlarm";
-import Chart from "../screens/Chart";
-import Diagnosis from "../screens/Diagnosis";
+import Setting from "../screens/FooterPages/Setting";
+import CurrentAlarm from "../screens/FooterPages/CurrentAlarm";
+import TodayDrink from "../screens/MenuPages/TodayDrink";
+import SetAlarm from "../screens/MenuPages/SetAlarm";
+import Chart from "../screens/MenuPages/Chart";
+import Diagnosis from "../screens/MenuPages/Diagnosis";
 
 const Stack = createStackNavigator();
 

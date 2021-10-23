@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 
 const Diagnosis = ({ navigation }) => {
   return (
