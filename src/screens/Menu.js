@@ -63,7 +63,7 @@ const Menu = ({ navigation }) => {
 
       {/* Footer Part - 모듈 분리 필요*/}
       <View style={styles.page3}>
-        <Footer navigation={navigation}></Footer>
+        <Footer navigation={navigation} current="Menu"></Footer>
       </View>
     </View>
   );

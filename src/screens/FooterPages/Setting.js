@@ -120,7 +120,7 @@ const Setting = ({ navigation }) => {
       </View>
       {/* Footer */}
       <View style={styles.page4}>
-        <Footer navigation={navigation}></Footer>
+        <Footer navigation={navigation} current="Setting"></Footer>
       </View>
     </View>
   );

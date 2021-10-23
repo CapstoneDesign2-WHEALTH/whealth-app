@@ -24,7 +24,7 @@ const CurrentAlarm = ({ navigation }) => {
 
       {/* Footer */}
       <View style={styles.page3}>
-        <Footer navigation={navigation}></Footer>
+        <Footer navigation={navigation} current="CurrentAlarm"></Footer>
       </View>
     </View>
   );
