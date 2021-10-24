@@ -10,6 +10,7 @@ import {
   ContributionGraph,
   StackedBarChart
 } from "react-native-chart-kit";
+import color from "../../styles/color";
 
 const screenWidth = Dimensions.get("window").width
 const screenHeight = Dimensions.get("window").height
@@ -27,7 +28,7 @@ const Chart = ({ navigation }) => {
 
       {/* 페이지 표시 */}
       <View style={styles.page1}>
-        <Text style={{ color: "#145BC7", fontSize: 35, fontWeight: "700" }}>
+        <Text style={{ color: color.hc, fontSize: 35, fontWeight: "700" }}>
           차트 / 통계
         </Text>
       </View>
@@ -107,8 +108,8 @@ const styles = StyleSheet.create({
     flex: 8,
     alignItems: "center",
     justifyContent: "center",
-    borderBottomColor: "#145BC7",
-    borderTopColor: "#145BC7",
+    borderBottomColor: color.hc,
+    borderTopColor: color.hc,
     borderBottomWidth: 0.2,
     borderTopWidth: 0.2,
   },
@@ -118,15 +119,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     borderTopWidth: 0.5,
-    borderTopColor: "#a3cdf5",
+    borderTopColor: color.bc,
   },
 });
 
 // 차트 스타일
 const chartConfig = {
-  backgroundColor: "#145BC7",
-  backgroundGradientFrom: "#145BC7",
-  backgroundGradientTo: "#145BC7",
+  backgroundColor: color.hc,
+  backgroundGradientFrom: color.hc,
+  backgroundGradientTo: color.hc,
   decimalPlaces: 2, // optional, defaults to 2dp
   color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
   labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
@@ -136,7 +137,7 @@ const chartConfig = {
   propsForDots: {
     r: "6",
     strokeWidth: "2",
-    stroke: "#145BC7" // 점 색상
+    stroke: color.hc // 점 색상
   }
 };
 

@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
+import color from "../styles/color";
 
 const Footer = (props) => {
-  const [alarm, setAlarm] = useState("#a3cdf5");
-  const [menu, setMenu] = useState("#a3cdf5");
-  const [setting, setSetting] = useState("#a3cdf5");
+  const [alarm, setAlarm] = useState(color.bc);
+  const [menu, setMenu] = useState(color.bc);
+  const [setting, setSetting] = useState(color.bc);
   useEffect(() => {
-    props.current === "CurrentAlarm" ? setAlarm("#145BC7") : undefined;
-    props.current === "Menu" ? setMenu("#145BC7") : undefined;
-    props.current === "Setting" ? setSetting("#145BC7") : undefined;
+    props.current === "CurrentAlarm" ? setAlarm(color.hc) : undefined;
+    props.current === "Menu" ? setMenu(color.hc) : undefined;
+    props.current === "Setting" ? setSetting(color.hc) : undefined;
   }, []);
   return (
     <View style={styles.container}>

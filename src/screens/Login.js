@@ -1,11 +1,9 @@
 import React from "react";
 import { Image } from "react-native";
-import styled from "styled-components/native";
 import { StyleSheet, View, Text } from "react-native";
-import PropTypes from "prop-types";
 import TextInput from "../components/TextInput";
 import HomeButton from "../components/HomeButton";
-import { HomeButtonStyles } from "../styles/ButtonStyle";
+import color from "../styles/color";
 
 const loginStyles = StyleSheet.create({
   container: {
@@ -18,7 +16,7 @@ const loginStyles = StyleSheet.create({
     fontSize: 20,
     alignItems: "center",
     fontWeight: "bold",
-    color: "#A3CFE5",
+    color: color.bc,
   },
 });
 
@@ -47,14 +45,14 @@ const Login = ({navigation}) => {
 
       <HomeButton
         title="Forgot Password?"
-        fontcolor="#A3CFE5"
+        fontcolor={color.bc}
         bgcolor="#FFFFFF"
         onPress={() => alert("forgot passwd")}
       />
       <HomeButton
         title="Login"
         fontcolor="#FFFFFF"
-        bgcolor="#A3CFE5"
+        bgcolor={color.bc}
         onPress={() => navigation.navigate("Menu")}
       />
     </View>

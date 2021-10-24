@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StyleSheet, View, TouchableOpacity, Text, Alert } from "react-native";
 import styled from "styled-components/native";
+import color from "../styles/color";
 
 const ButtonContainer = styled.TouchableOpacity`
   background-color: ${(props) =>
-    props.bgcolor === "blue" ? "#A3CFE5" : "#FFFFFF"};
+    props.bgcolor === "blue" ? color.hc : "#FFFFFF"};
   border-radius: 8px;
   padding: 10px 24px;
   margin: 7px 0px;
@@ -15,7 +16,7 @@ const ButtonContainer = styled.TouchableOpacity`
 const Title = styled.Text`
   font-size: 16px;
   font-weight: 600;
-  color: ${(props) => (props.bgcolor === "blue" ? "#FFFFFF" : "#A3CFE5")};
+  color: ${(props) => (props.bgcolor === "blue" ? "#FFFFFF" : color.hc)};
   text-align: center;
 `;
 

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import Footer from "../components/Footer";
+import color from "../styles/color";
 
 const TodayDrink = ({ navigation }) => {
   return (
@@ -12,7 +13,7 @@ const TodayDrink = ({ navigation }) => {
 
       {/* 페이지 표시 */}
       <View style={styles.page1}>
-        <Text style={{ color: "#145BC7", fontSize: 35, fontWeight: "700" }}>
+        <Text style={{ color: color.hc, fontSize: 35, fontWeight: "700" }}>
           오늘의 음수량
         </Text>
       </View>
@@ -48,8 +49,8 @@ const styles = StyleSheet.create({
     flex: 8,
     alignItems: "center",
     justifyContent: "center",
-    borderBottomColor: "#145BC7",
-    borderTopColor: "#145BC7",
+    borderBottomColor: color.hc,
+    borderTopColor: color.hc,
     borderBottomWidth: 0.2,
     borderTopWidth: 0.2,
   },
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     borderTopWidth: 0.5,
-    borderTopColor: "#a3cdf5",
+    borderTopColor: color.bc,
   },
 });
 

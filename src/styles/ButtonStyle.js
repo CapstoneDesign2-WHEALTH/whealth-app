@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-
+import color from "./color";
 export const HomeButtonStyles = StyleSheet.create({
   defaultButton: {
     marginTop: 10,
@@ -8,7 +8,7 @@ export const HomeButtonStyles = StyleSheet.create({
     borderWidth: 1,
     width: "80%",
     height: "5%",
-    borderColor: "#A3CFE5",
+    borderColor: color.bc,
   },
   defaultText: {
     textAlign: "center",

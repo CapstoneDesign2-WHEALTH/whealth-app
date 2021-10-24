@@ -3,12 +3,11 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import {
   FontAwesome,
   MaterialCommunityIcons,
-  Entypo,
-  Ionicons,
 } from "@expo/vector-icons";
 import React from "react";
 import Article from "../components/Article";
 import Footer from "../components/Footer";
+import color from "../styles/color";
 
 const Menu = ({ navigation }) => {
   return (
@@ -22,15 +21,15 @@ const Menu = ({ navigation }) => {
           <FontAwesome
             name="hand-paper-o"
             size={24}
-            color="#145BC7"
+            color={color.hc}
             fontWeight="700"
           />
-          <Text style={{ color: "#145BC7", fontSize: 30, fontWeight: "700" }}>
+          <Text style={{ color: color.hc, fontSize: 30, fontWeight: "700" }}>
             {" "}
             ㅇㅇㅇ 님 안녕하세요!
           </Text>
         </View>
-        <MaterialCommunityIcons name="face-profile" size={40} color="black" />
+        <MaterialCommunityIcons name="face-profile" size={40} color={color.bc} />
       </View>
 
       {/* 메뉴 선택지 - Article */}
@@ -40,24 +39,28 @@ const Menu = ({ navigation }) => {
           icon="cup-water"
           navigation={navigation}
           name="TodayDrink"
+          color={color.orange}
         ></Article>
         <Article
           title="맞춤 건강 진단"
           icon="lead-pencil"
           navigation={navigation}
           name="Diagnosis"
+          color={color.lightPurple}
         ></Article>
         <Article
           title="차트 / 통계"
           icon="chart-bar"
           navigation={navigation}
           name="Chart"
+          color={color.pink}
         ></Article>
         <Article
           title="Water 알람"
           icon="alarm"
           navigation={navigation}
           name="SetAlarm"
+          color={color.purple}
         ></Article>
       </View>
 
@@ -94,7 +97,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     borderTopWidth: 0.5,
-    borderTopColor: "#a3cdf5",
+    borderTopColor: color.bc,
   },
 });
 

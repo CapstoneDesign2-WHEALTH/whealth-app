@@ -8,6 +8,7 @@ import {
 import React from "react";
 import Footer from "../../components/Footer";
 import Wave from "react-native-waveview";
+import color from "../../styles/color";
 
 const chartHeight = Dimensions.get("window").height;
 const chartWidth = Dimensions.get("window").width;
@@ -20,14 +21,14 @@ const TodayDrink = ({ navigation }) => {
 
       {/* 페이지 표시 */}
       <View style={styles.page1}>
-        <Text style={{ color: "#145BC7", fontSize: 35, fontWeight: "700" }}>
+        <Text style={{ color: color.hc, fontSize: 35, fontWeight: "700" }}>
           오늘의 음수량
         </Text>
       </View>
 
       {/* 음수량 표시 */}
       <View style={styles.page2}>
-        <Text style={{ fontSize: 70, color: "#145BC7" }}> 40% </Text>
+        <Text style={{ fontSize: 70, color: color.hc }}> 40% </Text>
         <Wave
           style={_styles.waveBall}
           H={(chartHeight / 11) * 2}
@@ -66,8 +67,8 @@ const styles = StyleSheet.create({
     flex: 8,
     alignItems: "center",
     justifyContent: "center",
-    borderBottomColor: "#145BC7",
-    borderTopColor: "#145BC7",
+    borderBottomColor: color.hc,
+    borderTopColor: color.hc,
   },
   page3: {
     flex: 1,
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     borderTopWidth: 0.5,
-    borderTopColor: "#a3cdf5",
+    borderTopColor: color.bc,
   },
 });
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Alert, Image, StyleSheet, View } from "react-native";
 import HomeButton from "../components/HomeButton";
+import color from "../styles/color";
 
 const Home = ({ navigation }) => {
   return (
@@ -16,12 +17,12 @@ const Home = ({ navigation }) => {
       <HomeButton
         title="Sign Up"
         fontcolor="#FFFFFF"
-        bgcolor="#A3CFE5"
+        bgcolor={color.bc}
         onPress={() => alert("um hi")}
       />
       <HomeButton
         title="Login"
-        fontcolor="#A3CFE5"
+        fontcolor={color.bc}
         bgcolor="#FFFFFF"
         onPress={() => navigation.navigate("Login")}
       />

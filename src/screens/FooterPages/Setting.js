@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import Footer from "../../components/Footer";
+import color from "../../styles/color";
 
 const Setting = ({ navigation }) => {
   return (
@@ -12,7 +13,7 @@ const Setting = ({ navigation }) => {
 
       {/* 페이지 표시 */}
       <View style={styles.page1}>
-        <Text style={{ color: "#145BC7", fontSize: 35, fontWeight: "700" }}>
+        <Text style={{ color: color.hc, fontSize: 35, fontWeight: "700" }}>
           설정
         </Text>
       </View>
@@ -22,9 +23,9 @@ const Setting = ({ navigation }) => {
         <MaterialCommunityIcons
           name="face-profile"
           size={100}
-          color="#145BC7"
+          color={color.hc}
         />
-        <Text style={{ color: "#145BC7", fontSize: 30, fontWeight: "700" }}>
+        <Text style={{ color: color.hc, fontSize: 30, fontWeight: "700" }}>
           ㅇㅇㅇ 님 프로필
         </Text>
       </View>
@@ -35,15 +36,15 @@ const Setting = ({ navigation }) => {
             <MaterialCommunityIcons
               name="account"
               size={24}
-              color="#a3cdf5"
+              color={color.bc}
               style={{ marginRight: 10 }}
             />
-            <Text style={{ color: "#145BC7", fontSize: 16 }}>Account</Text>
+            <Text style={{ color: color.hc, fontSize: 16 }}>Account</Text>
           </View>
           <MaterialCommunityIcons
             name="chevron-right"
             size={24}
-            color="#a3cdf5"
+            color={color.bc}
           />
         </TouchableOpacity>
 
@@ -52,15 +53,15 @@ const Setting = ({ navigation }) => {
             <MaterialCommunityIcons
               name="bell-ring"
               size={24}
-              color="#a3cdf5"
+              color={color.bc}
               style={{ marginRight: 10 }}
             />
-            <Text style={{ color: "#145BC7", fontSize: 16 }}>Notification</Text>
+            <Text style={{ color: color.hc, fontSize: 16 }}>Notification</Text>
           </View>
           <MaterialCommunityIcons
             name="chevron-right"
             size={24}
-            color="#a3cdf5"
+            color={color.bc}
           />
         </TouchableOpacity>
 
@@ -69,15 +70,15 @@ const Setting = ({ navigation }) => {
             <MaterialCommunityIcons
               name="eye"
               size={24}
-              color="#a3cdf5"
+              color={color.bc}
               style={{ marginRight: 10 }}
             />
-            <Text style={{ color: "#145BC7", fontSize: 16 }}>Appearance</Text>
+            <Text style={{ color: color.hc, fontSize: 16 }}>Appearance</Text>
           </View>
           <MaterialCommunityIcons
             name="chevron-right"
             size={24}
-            color="#a3cdf5"
+            color={color.bc}
           />
         </TouchableOpacity>
 
@@ -86,17 +87,17 @@ const Setting = ({ navigation }) => {
             <MaterialCommunityIcons
               name="security"
               size={24}
-              color="#a3cdf5"
+              color={color.bc}
               style={{ marginRight: 10 }}
             />
-            <Text style={{ color: "#145BC7", fontSize: 16 }}>
+            <Text style={{ color: color.hc, fontSize: 16 }}>
               Privacy & Security
             </Text>
           </View>
           <MaterialCommunityIcons
             name="chevron-right"
             size={24}
-            color="#a3cdf5"
+            color={color.bc}
           />
         </TouchableOpacity>
 
@@ -105,15 +106,15 @@ const Setting = ({ navigation }) => {
             <MaterialCommunityIcons
               name="cellphone-sound"
               size={24}
-              color="#a3cdf5"
+              color={color.bc}
               style={{ marginRight: 10 }}
             />
-            <Text style={{ color: "#145BC7", fontSize: 16 }}>Sound</Text>
+            <Text style={{ color: color.hc, fontSize: 16 }}>Sound</Text>
           </View>
           <MaterialCommunityIcons
             name="chevron-right"
             size={24}
-            color="#a3cdf5"
+            color={color.bc}
             style={{ marginRight: 10 }}
           />
         </TouchableOpacity>
@@ -144,8 +145,8 @@ const styles = StyleSheet.create({
     flex: 3,
     alignItems: "center",
     justifyContent: "center",
-    borderBottomColor: "#145BC7",
-    borderTopColor: "#145BC7",
+    borderBottomColor: color.hc,
+    borderTopColor: color.hc,
     borderBottomWidth: 0.2,
     borderTopWidth: 0.2,
   },
@@ -160,7 +161,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     borderTopWidth: 0.5,
-    borderTopColor: "#a3cdf5",
+    borderTopColor: color.bc,
   },
   settingLeft: {
     flexDirection: "row",
