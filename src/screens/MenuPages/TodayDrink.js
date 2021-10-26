@@ -4,6 +4,7 @@ import React from "react";
 import Footer from "../../components/Footer";
 import Wave from "react-native-waveview";
 import color from "../../styles/color";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const chartHeight = Dimensions.get("window").height;
 const chartWidth = Dimensions.get("window").width;
@@ -16,9 +17,10 @@ const TodayDrink = ({ navigation }) => {
 
       {/* 페이지 표시 */}
       <View style={styles.page1}>
-        <Text style={{ color: color.hc, fontSize: 35, fontWeight: "700" }}>
+        <Text style={{ color: color.hc, fontSize: 35, fontWeight: "700", marginRight:10}}>
           오늘의 음수량
         </Text>
+        <MaterialCommunityIcons name="cup-water" size={35} color={color.hc} />
       </View>
 
       {/* 음수량 표시 */}
@@ -54,7 +56,6 @@ const styles = StyleSheet.create({
   page1: {
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
     marginHorizontal: 30,
   },

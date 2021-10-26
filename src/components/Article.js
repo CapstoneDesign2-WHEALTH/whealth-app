@@ -11,17 +11,17 @@ const Article = (props) => {
       }}
     >
       <Text style={styles.article_text}>{props.title}</Text>
-      <MaterialCommunityIcons name={props.icon} size={40} color={props.color} />
+      <MaterialCommunityIcons name={props.icon} size={60} color={props.color} />
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   article: {
-    flex: 0.1,
+    flex: 1,
     flexDirection: "row",
     backgroundColor: color.gray,
-    paddingVertical: "10%",
+    paddingVertical: "14%",
     paddingHorizontal: "7%",
     width: "90%",
     alignItems: "center",
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   article_text: {
     color: color.hc,
     fontSize: 30,
-    fontWeight: "800",
+    fontWeight: "700",
   },
 });
 export default Article;
