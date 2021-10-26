@@ -20,7 +20,7 @@ const loginStyles = StyleSheet.create({
   },
 });
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   return (
     <View style={loginStyles.container}>
       <Text style={[loginStyles.headerText, { marginTop: "10%" }]}>

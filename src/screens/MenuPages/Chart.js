@@ -1,5 +1,11 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TouchableOpacity,Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Dimensions,
+} from "react-native";
 import React from "react";
 import Footer from "../../components/Footer";
 import {
@@ -8,18 +14,18 @@ import {
   PieChart,
   ProgressChart,
   ContributionGraph,
-  StackedBarChart
+  StackedBarChart,
 } from "react-native-chart-kit";
 import color from "../../styles/color";
 
-const screenWidth = Dimensions.get("window").width
-const screenHeight = Dimensions.get("window").height
+const screenWidth = Dimensions.get("window").width;
+const screenHeight = Dimensions.get("window").height;
 
 const Chart = ({ navigation }) => {
   // 진행 차트 데이터
   const data = {
     labels: ["Swim", "Bike", "Run"], // optional
-    data: [0.4, 0.6, 0.8]
+    data: [0.4, 0.6, 0.8],
   };
   return (
     <View style={styles.container}>
@@ -48,13 +54,13 @@ const Chart = ({ navigation }) => {
                     Math.random() * 100,
                     Math.random() * 100,
                     Math.random() * 100,
-                    Math.random() * 100
-                  ]
-                }
-              ]
+                    Math.random() * 100,
+                  ],
+                },
+              ],
             }}
             width={screenWidth} // from react-native
-            height={screenHeight/11*4}
+            height={(screenHeight / 11) * 4}
             yAxisLabel=""
             yAxisSuffix="ml"
             yAxisInterval={1} // optional, defaults to 1
@@ -71,7 +77,7 @@ const Chart = ({ navigation }) => {
         <ProgressChart
           data={data}
           width={screenWidth}
-          height={screenHeight/11*4}
+          height={(screenHeight / 11) * 4}
           strokeWidth={16}
           radius={32}
           chartConfig={chartConfig}
@@ -132,13 +138,13 @@ const chartConfig = {
   color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
   labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
   style: {
-    borderRadius: 16
+    borderRadius: 16,
   },
   propsForDots: {
     r: "6",
     strokeWidth: "2",
-    stroke: color.hc // 점 색상
-  }
+    stroke: color.hc, // 점 색상
+  },
 };
 
 export default Chart;

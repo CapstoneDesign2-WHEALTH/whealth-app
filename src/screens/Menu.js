@@ -1,9 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import {
-  FontAwesome,
-  MaterialCommunityIcons,
-} from "@expo/vector-icons";
+import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import Article from "../components/Article";
 import Footer from "../components/Footer";
@@ -29,7 +26,11 @@ const Menu = ({ navigation }) => {
             ㅇㅇㅇ 님 안녕하세요!
           </Text>
         </View>
-        <MaterialCommunityIcons name="face-profile" size={40} color={color.bc} />
+        <MaterialCommunityIcons
+          name="face-profile"
+          size={40}
+          color={color.bc}
+        />
       </View>
 
       {/* 메뉴 선택지 - Article */}

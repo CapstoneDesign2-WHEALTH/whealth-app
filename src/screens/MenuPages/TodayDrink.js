@@ -1,10 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Dimensions,
-} from "react-native";
+import { StyleSheet, Text, View, Dimensions } from "react-native";
 import React from "react";
 import Footer from "../../components/Footer";
 import Wave from "react-native-waveview";
