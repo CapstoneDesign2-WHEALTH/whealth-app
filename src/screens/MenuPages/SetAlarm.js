@@ -2,7 +2,9 @@ import Constants from "expo-constants";
 import * as Notifications from "expo-notifications";
 import React, { useState, useEffect, useRef } from "react";
 import { Text, View, Button, Platform } from "react-native";
+import DateTimePicker from "@react-native-community/datetimepicker";
 
+// 알람 진동,소리 설정
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
@@ -13,7 +15,30 @@ Notifications.setNotificationHandler({
 
 export default function App() {
   const [expoPushToken, setExpoPushToken] = useState("");
-  const [notification, setNotification] = useState(false); // 현재 알림이 온 알람 정보
+
+  // 현재 알림이 온 알람 정보
+  const [notification, setNotification] = useState(false);
+
+  // 날짜, 시간 선택
+  const [date, setDate] = useState(new Date());
+  const [mode, setMode] = useState("date");
+  const [show, setShow] = useState(false);
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(Platform.OS === "ios");
+    setDate(currentDate);
+  };
+  const showMode = (currentMode) => {
+    setShow(true);
+    setMode(currentMode);
+  };
+  const showDatepicker = () => {
+    showMode("date");
+  };
+  const showTimepicker = () => {
+    showMode("time");
+  };
 
   const notificationListener = useRef();
   const responseListener = useRef();
@@ -24,7 +49,7 @@ export default function App() {
       setExpoPushToken(token)
     );
 
-    // 앱 도중 알림 왔을 때 실행 함수
+    // 앱 실행 도중 알림 왔을 때 실행 함수
     notificationListener.current =
       Notifications.addNotificationReceivedListener((notification) => {
         responseListener;
@@ -33,7 +58,7 @@ export default function App() {
         // notification : object with data, identifier, request(content,body,data, title, trigger,...)
       });
 
-    // 알람을 눌렀을 때 일어나는 반응입니다.
+    // 알람을 눌렀을 때 실행되는 함수
     responseListener.current =
       Notifications.addNotificationResponseReceivedListener((response) => {
         // console.log(response);
@@ -58,6 +83,7 @@ export default function App() {
     >
       <Text>당신의 토큰: {expoPushToken}</Text>
 
+      {/* 알람 내용 */}
       <View style={{ alignItems: "center", justifyContent: "center" }}>
         <Text>
           Title: {notification && notification.request.content.title}{" "}
@@ -69,11 +95,31 @@ export default function App() {
         </Text>
       </View>
 
+      {/* 날짜 시간 Picker */}
+      <View>
+        <View>
+          <Button onPress={showDatepicker} title="날짜 선택" />
+        </View>
+        <View>
+          <Button onPress={showTimepicker} title="시간 선택" />
+        </View>
+        {show && (
+          <DateTimePicker
+            testID="dateTimePicker"
+            value={date}
+            mode={mode}
+            is24Hour={true}
+            display="default"
+            onChange={onChange}
+          />
+        )}
+      </View>
       {/* 알람 만들기 */}
       <Button
         title="Press to schedule a notification"
         onPress={async () => {
-          await schedulePushNotification();
+          await schedulePushNotification(date);
+          console.log(`${date} 에 알람 생성`);
         }}
       />
 
@@ -81,7 +127,7 @@ export default function App() {
       <Button
         title="cancel"
         onPress={async () => {
-          // 현재 알람 위치
+          // 현재 알람 식별자 출력
           console.log(notification.request.identifier);
           await Notifications.cancelScheduledNotificationAsync(
             notification.request.identifier
@@ -92,17 +138,20 @@ export default function App() {
   );
 }
 
-// 이런 푸시 알람을 만들겠습니다.
+// 푸시 알람을 만들기
 // 알람에 대한 정보를 List로 보여줘야하기 때문에
-// asyncStorage에 저장할 작업 필요
-async function schedulePushNotification() {
+// DB에 저장하는 작업 필요
+async function schedulePushNotification(dates) {
   await Notifications.scheduleNotificationAsync({
     content: {
-      title: "웰쓰2",
+      title: "웰쓰123",
       body: "물마셔",
       data: { data: "goes here" },
     },
-    trigger: { seconds: 5, repeats: true },
+    trigger: {
+      date: dates,
+      repeats: true,
+    },
   });
 }
 
