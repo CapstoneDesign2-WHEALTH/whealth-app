@@ -17,7 +17,14 @@ const TodayDrink = ({ navigation }) => {
 
       {/* 페이지 표시 */}
       <View style={styles.page1}>
-        <Text style={{ color: color.hc, fontSize: 35, fontWeight: "700", marginRight:10}}>
+        <Text
+          style={{
+            color: color.hc,
+            fontSize: 35,
+            fontWeight: "700",
+            marginRight: 10,
+          }}
+        >
           오늘의 음수량
         </Text>
         <MaterialCommunityIcons name="cup-water" size={35} color={color.hc} />
